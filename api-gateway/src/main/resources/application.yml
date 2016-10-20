@@ -1,9 +1,0 @@
-spring:
-  dubbo:
-    name: apigateway
-    address: zookeeper://127.0.0.1:2181
-    check: false
-    time-out: 6000
-    registry-map:
-      com.xuxl.user.service.api.UserService: latest
-  
