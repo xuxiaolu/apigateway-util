@@ -7,13 +7,14 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface HttpApi {
+public @interface ApiOperation {
+	
     /**
      * Http 接口名
      *
      * @return
      */
-    String name();
+    String value();
 
     /**
      * Http 接口注释
@@ -31,9 +32,11 @@ public @interface HttpApi {
     String owner() default "";
     
     /**
-     * 请求方式,get,post
+     * 请求方式,GET,POST
      * @return
      */
     String method();
+    
+    
 
 }

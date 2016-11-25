@@ -5,22 +5,28 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ApiGroup {
+public @interface ApiParam {
+    /**
+     * 是否为必要参数
+     */
+    boolean required();
+
 
     /**
-     * ApiGroup名称
-     *
-     * @return
+     * 参数名称
      */
     String name();
 
+    /**
+     * 默认值
+     */
+    String defaultValue() default "";
 
     /**
-     * ApiGroup负责人
-     *
-     * @return
+     * 参数注释
      */
-    String owner() default "";
+    String desc();
 }
+
