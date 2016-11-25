@@ -1,14 +1,16 @@
-package com.xuxl.common.annotation;
+package com.xuxl.common.annotation.dubbo.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DubboService {
+public @interface DubboMethod {
 	
-	String version();
+	int retries() default 0;
+	
+	int timeOut() default 1000;
 
 }

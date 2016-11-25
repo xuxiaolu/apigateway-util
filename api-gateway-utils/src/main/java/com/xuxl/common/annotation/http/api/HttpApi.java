@@ -1,4 +1,4 @@
-package com.xuxl.common.annotation;
+package com.xuxl.common.annotation.http.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -34,6 +34,6 @@ public @interface HttpApi {
      * 请求方式,get,post
      * @return
      */
-    String type();
+    String method();
 
 }
