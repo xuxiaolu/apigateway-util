@@ -13,10 +13,6 @@ public class ServiceException extends RuntimeException implements Serializable {
 
 	private int code;
 	
-	private int displayCode;
-	
-	private String description;
-
 	private String msg;
 
 	public ServiceException(AbstractReturnCode code) {
@@ -24,10 +20,8 @@ public class ServiceException extends RuntimeException implements Serializable {
 	}
 
 	public ServiceException(AbstractReturnCode code, String msg) {
-		super("code:[" + code.getDesc() + ":" + code.getCode() + "],msg:" + msg);
+		super("code:" + code.getCode() + ",msg:" + msg);
 		this.code = code.getCode();
-		this.displayCode = code.getDisplay().getCode();
-		this.description = code.getDisplay().getDesc();
 		this.msg = msg;
 	}
 
@@ -35,15 +29,8 @@ public class ServiceException extends RuntimeException implements Serializable {
 		return code;
 	}
 
-	public int getDisplayCode() {
-		return displayCode;
-	}
-
 	public String getMsg() {
 		return msg;
 	}
 
-	public String getDescription() {
-		return description;
-	}
 }
