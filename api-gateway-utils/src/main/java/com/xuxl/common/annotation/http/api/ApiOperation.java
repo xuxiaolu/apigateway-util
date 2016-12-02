@@ -37,6 +37,17 @@ public @interface ApiOperation {
      */
     String method();
     
+    SecurityType security() default SecurityType.NONE;
+    
+    
+    public static enum SecurityType {
+    	
+    	SECURITY,
+    	
+    	NONE;
+    	
+    }
+    
     
 
 }
